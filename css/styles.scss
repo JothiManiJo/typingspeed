@@ -1,0 +1,110 @@
+:root {
+      --almostBlack: #0B132B;
+      --textWhite: floralwhite;
+      --lightGreen: #22333B;
+      --lightGrey: #546a7b;
+}
+body {
+      font-family: 'Balsamiq Sans', cursive;
+      margin: 0;
+      font-size: 18px;
+}
+*, :before, :after {
+      box-sizing: border-box;
+}
+.container {
+      padding: 5% 4%;
+      grid-gap: 1rem;
+}
+.header, .container, .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      justify-content: center;
+}
+.header {
+      .img {
+            width: 50%;
+            justify-self: flex-end;
+            img {
+                  width: 100%;
+            }
+      }
+}
+header .container {
+      background-color: var(--almostBlack);
+      color: var(--textWhite);
+}
+main .container {
+      background-color: var(--lightGreen);
+      color: var(--textWhite);
+      .main div{
+            margin: 1% 0 0.5% 0;
+      }
+}
+.test-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .test-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--textWhite);
+            padding: 0.5% 1%;      
+            justify-self: center;
+            font-family: sans-serif;            
+      }
+      .test-field {  
+            width: 100%;          
+            .text-area {
+                  font-size: 1rem;
+                  font-family: sans-serif;   
+                  width: 100%;
+                  padding: 2% 1%;
+                  outline: none;
+                  resize: none;
+                  transition: box-shadow 1s, border-width 500ms ease, border-style 500ms ease;                                   
+                  &:focus {                        
+                        box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.5);
+                        border: 5px solid var(--almostBlack);
+                        border-radius: 10px;
+                  }
+            }
+      }
+}
+.results {
+      grid-gap: 0.5rem;
+      > div {
+            text-align: center;
+            p {
+                  font-size: 1.5em;
+            }
+      }
+}
+.reset-div {
+      text-align: center;
+}
+.btn {
+      text-decoration: none;
+      background-color: var(--almostBlack);
+      padding: 1% 5%;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1em;
+      border-radius: 10px;
+      &:hover {
+            background-color: rgba(11, 19, 43, 0.8)
+      }
+}
+@media (max-width: 608px) {
+      .header {
+            .text {
+                  text-align: center;
+            }
+            .img {
+                  justify-self: center;
+            }
+      }
+}
+@media (min-width: 950px) {
+      .test-area .test-field, .test-text {
+            width: 70%;
+      }
+}
